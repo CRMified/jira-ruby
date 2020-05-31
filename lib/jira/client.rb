@@ -247,7 +247,7 @@ module JIRA
     # appropriate method (oauth, basic).
     def request(http_method, path, body = '', headers = {})
       puts "#{http_method}: #{path} - [#{body}]" if @http_debug
-      @request_client.request(http_method, path, body, headers)
+      @request_client.request(http_method, path, body, merge_default_headers(headers))
     end
 
     protected
